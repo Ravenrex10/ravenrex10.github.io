@@ -1,0 +1,63 @@
+:root {
+	--color1: #dfd785;
+	--color2: #ebc275;
+	--color3: #f39949;
+	--color4: #ff7831;
+	--color5: #ca5a2e;
+	--color6: #c75c5c;
+	--color7: #575e63b0;
+	--color8: #25282A;
+}
+
+.carousel-item {
+	height: 800px; /* adjust this as necessary */
+}
+
+.carousel-item img {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}
+
+.img-about {
+	height: 364px;
+	width: auto;
+	margin-left: auto;
+   	margin-right: auto;
+   	display: block;
+}
+
+.vinyl:hover {
+	transform: scale(1.01);
+}
+
+.nav-link:hover {
+  cursor: pointer;
+}
+
+#cart-items {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 300px;
+	height: 100%;
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+#cart-items h4 {
+	margin-top: 100px;
+}
+
+.left {
+	width: 99%;
+	float: left;
+}
+
+.right {
+	width: 1%;
+	float: right;
+}
