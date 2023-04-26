@@ -233,6 +233,8 @@ const popup = document.getElementById("popup");
 
 const container = document.getElementById("vinyls-container");
 
+let vinylIndex = 8;
+
 vinyls.forEach((vinyl) => {
   const colDiv = document.createElement('div');
   colDiv.classList.add('col');
@@ -250,7 +252,7 @@ vinyls.forEach((vinyl) => {
   const img = document.createElement("img");
   img.src = vinyl.image;
   img.classList.add("card-img-top");
-  img.setAttribute("alt", "...");
+  img.setAttribute("alt", vinyl.title);
 
   const title = document.createElement('h5');
   title.classList.add('card-title');
@@ -287,6 +289,9 @@ vinyls.forEach((vinyl) => {
   cardDiv.appendChild(cardBodyDiv);
   colDiv.appendChild(cardDiv);
   container.appendChild(colDiv);
+
+  addCartButton.setAttribute("tabindex", vinylIndex);
+  vinylIndex++;
 
   // Función para añadir al carrito
   addCartButton.addEventListener("click", function () {
