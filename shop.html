@@ -8,12 +8,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
   <meta charset="UTF-8">
+  <html lang="en"></html>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html" tabindex="1"><i class="fa-solid fa-compact-disc"></i></a>
+      <a class="navbar-brand" href="index.html" tabindex="1"><i class="fa-solid fa-compact-disc" title="Home" title="Cart"></i></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -29,7 +30,7 @@
         </ul>
         <div class="container">
           <div class="input-group">
-            <input type="text" id="searchInput" class="form-control mr-2" placeholder="Search vinyls" aria-label="Search" tabindex="4">
+            <input type="text" id="searchInput" class="form-control mr-2" placeholder="Search vinyls" aria-label="Search" tabindex="4" title="Search vinyls">
             <div class="input-group-append mx-2">
               <button type="button" id="searchButton" class="btn btn-warning" tabindex="5">Search</button>
             </div>
@@ -45,29 +46,18 @@
         </ul>
       </div>
     </div>
-
   </nav>
+  <h1>Shop</h1>
+  <br>
   <div id="popup" class="alert alert-success rounded position-fixed bottom-0 start-50 translate-middle-x zindex-1050 bg-success text-white d-none" style="z-index:1000" role="alert">
-    <!--<div class="row align-items-center">
-      <div class="col-sm-9">
-        Item added to cart!
-      </div>
-      <div class="col-sm-3 text-right">
-        <button class="btn btn-outline-light">Undo</button>
-      </div>
-    </div> -->
     Item added to cart!
   </div>
-  <div class="container">
-    <br>
-    <br>
-    <br>
-          <div id="vinyls-container" class="left row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-4">
 
+  <div class="container">
+          <div id="vinyls-container" class="left row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-4">
           </div>
 
           <div id="cart-items" class="right">
-
           </div>
   </div>
   <br>
