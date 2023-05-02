@@ -275,6 +275,10 @@ vinyls.forEach((vinyl) => {
   addCartButton.innerText = 'Add to Cart';
   addCartButton.setAttribute("title", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price + "$");
 
+  const span = document.createElement('span');
+  span.classList.add("sr-only");
+  span.innerText = "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price + "$";
+
   // Añadido al carrito
   const addedProductButton = document.createElement('a');
   addedProductButton.innerText = "Item added!";
@@ -285,6 +289,7 @@ vinyls.forEach((vinyl) => {
   cardBodyDiv.appendChild(title);
   cardBodyDiv.appendChild(artist);
   cardBodyDiv.appendChild(price);
+  addCartButton.appendChild(span);
   cardBodyDiv.appendChild(addCartButton);
   cardDiv.appendChild(cardBodyDiv);
   colDiv.appendChild(cardDiv);
@@ -399,6 +404,12 @@ searchInput.addEventListener('input', function () {
       addCartButton.innerText = 'Add to Cart';
       addCartButton.setAttribute("title", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price + "$");
 
+      const span = document.createElement('span');
+      span.classList.add("sr-only");
+      span.innerText = "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price + "$";
+
+
+
       // Añadido al carrito
       const addedProductButton = document.createElement('a');
       addedProductButton.innerText = "Item added!";
@@ -409,6 +420,7 @@ searchInput.addEventListener('input', function () {
       cardBodyDiv.appendChild(title);
       cardBodyDiv.appendChild(artist);
       cardBodyDiv.appendChild(price);
+      addCartButton.appendChild(span);
       cardBodyDiv.appendChild(addCartButton);
       cardDiv.appendChild(cardBodyDiv);
       colDiv.appendChild(cardDiv);
