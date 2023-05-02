@@ -251,7 +251,7 @@ vinyls.forEach((vinyl) => {
   const img = document.createElement("img");
   img.src = vinyl.image;
   img.classList.add("card-img-top");
-  img.setAttribute("alt", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price + "$");
+  img.setAttribute("alt", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price);
 
   const title = document.createElement('h5');
   title.classList.add('card-title');
@@ -273,11 +273,11 @@ vinyls.forEach((vinyl) => {
   addCartButton.classList.add('btn');
   addCartButton.classList.add('btn-warning');
   addCartButton.innerText = 'Add to Cart';
-  addCartButton.setAttribute("title", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price + "$");
+  addCartButton.setAttribute("title", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price);
 
   const span = document.createElement('span');
   span.classList.add("sr-only");
-  span.innerText = "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price + "$";
+  span.innerText = "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price;
 
   // Añadido al carrito
   const addedProductButton = document.createElement('a');
@@ -381,7 +381,7 @@ searchInput.addEventListener('input', function () {
       const img = document.createElement("img");
       img.src = vinyl.image;
       img.classList.add("card-img-top");
-      img.setAttribute("alt", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price + "$");
+      img.setAttribute("alt", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price);
 
       const title = document.createElement('h5');
       title.classList.add('card-title');
@@ -402,11 +402,11 @@ searchInput.addEventListener('input', function () {
       addCartButton.classList.add('btn');
       addCartButton.classList.add('btn-warning');
       addCartButton.innerText = 'Add to Cart';
-      addCartButton.setAttribute("title", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price + "$");
+      addCartButton.setAttribute("title", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price);
 
       const span = document.createElement('span');
       span.classList.add("sr-only");
-      span.innerText = "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price + "$";
+      span.innerText = "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price;
 
 
 
