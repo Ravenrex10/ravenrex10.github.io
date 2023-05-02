@@ -209,15 +209,14 @@ const vinyls = [
 ];
 
 var login = document.getElementById("login");
-if(sessionStorage.getItem("mail") != "" && sessionStorage.getItem("mail") != null)
-{
-    login.innerText = sessionStorage.getItem("mail");
-    
-    login.href = "cerrarsesion.html";
+if (sessionStorage.getItem("mail") != "" && sessionStorage.getItem("mail") != null) {
+  login.innerText = sessionStorage.getItem("mail");
+
+  login.href = "cerrarsesion.html";
 }
 else {
-    login.innerText = "Login";
-    login.href = "login.html";
+  login.innerText = "Login";
+  login.href = "login.html";
 }
 
 const URL = new URLSearchParams(window.location.search);
@@ -252,7 +251,7 @@ vinyls.forEach((vinyl) => {
   const img = document.createElement("img");
   img.src = vinyl.image;
   img.classList.add("card-img-top");
-  img.setAttribute("alt", vinyl.title);
+  img.setAttribute("alt", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price + "$");
 
   const title = document.createElement('h5');
   title.classList.add('card-title');
@@ -274,7 +273,7 @@ vinyls.forEach((vinyl) => {
   addCartButton.classList.add('btn');
   addCartButton.classList.add('btn-warning');
   addCartButton.innerText = 'Add to Cart';
-  addCartButton.setAttribute("title",vinyl.title);
+  addCartButton.setAttribute("title", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price + "$");
 
   // Añadido al carrito
   const addedProductButton = document.createElement('a');
@@ -311,8 +310,8 @@ vinyls.forEach((vinyl) => {
     const nItems = itemsSplited.length;
     const itemsContainer = document.getElementById("cart-items");
     texto = document.createElement("h4");
-    texto.innerHTML = `You have `+ (nItems-1) +" items in your cart";
-    itemsContainer.innerHTML="";
+    texto.innerHTML = `You have ` + (nItems - 1) + " items in your cart";
+    itemsContainer.innerHTML = "";
     itemsContainer.appendChild(texto);
 
     popup.classList.remove("d-none");
@@ -377,7 +376,7 @@ searchInput.addEventListener('input', function () {
       const img = document.createElement("img");
       img.src = vinyl.image;
       img.classList.add("card-img-top");
-      img.setAttribute("alt", vinyl.title);
+      img.setAttribute("alt", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price + "$");
 
       const title = document.createElement('h5');
       title.classList.add('card-title');
@@ -398,7 +397,7 @@ searchInput.addEventListener('input', function () {
       addCartButton.classList.add('btn');
       addCartButton.classList.add('btn-warning');
       addCartButton.innerText = 'Add to Cart';
-      addCartButton.setAttribute("title",vinyl.title);
+      addCartButton.setAttribute("title", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price + "$");
 
       // Añadido al carrito
       const addedProductButton = document.createElement('a');
@@ -432,8 +431,8 @@ searchInput.addEventListener('input', function () {
         const nItems = itemsSplited.length;
         const itemsContainer = document.getElementById("cart-items");
         texto = document.createElement("h4");
-        texto.innerHTML = `You have `+ (nItems-1) +" items in your cart";
-        itemsContainer.innerHTML="";
+        texto.innerHTML = `You have ` + (nItems - 1) + " items in your cart";
+        itemsContainer.innerHTML = "";
         itemsContainer.appendChild(texto);
 
         // Cooldown para no añadir varios al spamear
@@ -470,7 +469,7 @@ const itemsSplited = items.split("+");
 const nItems = itemsSplited.length;
 const itemsContainer = document.getElementById("cart-items");
 texto = document.createElement("h4");
-texto.innerHTML = `You have `+ (nItems-1) +" items in your cart";
-itemsContainer.innerHTML="";
+texto.innerHTML = `You have ` + (nItems - 1) + " items in your cart";
+itemsContainer.innerHTML = "";
 itemsContainer.appendChild(texto);
 
