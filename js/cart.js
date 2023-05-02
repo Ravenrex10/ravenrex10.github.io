@@ -287,11 +287,6 @@ for(let i = 0; i < itemsSplited.length; i++){
         cardButton.classList.add("btn-danger");
         cardButton.innerText = "Remove";
         cardButton.addEventListener("click", removeItem, false);
-        addCartButton.setAttribute("title", "Remove Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price);
-
-        const span = document.createElement('span');
-        span.classList.add("sr-only");
-        span.innerText = "Remove Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price;
 
         cartContainer.appendChild(newColumn);
         newColumn.appendChild(card);
@@ -300,7 +295,6 @@ for(let i = 0; i < itemsSplited.length; i++){
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(artist);
         cardBody.appendChild(cardPrice);
-        addCartButton.appendChild(span);
         cardBody.appendChild(cardButton);
 
         priceTotal += parseInt(vinyl.price.replace("$",""));
