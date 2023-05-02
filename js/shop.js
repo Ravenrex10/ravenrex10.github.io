@@ -376,7 +376,7 @@ searchInput.addEventListener('input', function () {
       const img = document.createElement("img");
       img.src = vinyl.image;
       img.classList.add("card-img-top");
-      img.setAttribute("alt", "...");
+      img.setAttribute("alt", vinyl.title);
 
       const title = document.createElement('h5');
       title.classList.add('card-title');
@@ -397,6 +397,7 @@ searchInput.addEventListener('input', function () {
       addCartButton.classList.add('btn');
       addCartButton.classList.add('btn-warning');
       addCartButton.innerText = 'Add to Cart';
+      addCartButton.title = vinyl.title;
 
       // Añadido al carrito
       const addedProductButton = document.createElement('a');
