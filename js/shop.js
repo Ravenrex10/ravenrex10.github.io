@@ -274,6 +274,7 @@ vinyls.forEach((vinyl) => {
   addCartButton.classList.add('btn');
   addCartButton.classList.add('btn-warning');
   addCartButton.innerText = 'Add to Cart';
+  addCartButton.setAttribute("title",vinyl.title);
 
   // Añadido al carrito
   const addedProductButton = document.createElement('a');
@@ -397,7 +398,7 @@ searchInput.addEventListener('input', function () {
       addCartButton.classList.add('btn');
       addCartButton.classList.add('btn-warning');
       addCartButton.innerText = 'Add to Cart';
-      addCartButton.title = vinyl.title;
+      addCartButton.setAttribute("title",vinyl.title);
 
       // Añadido al carrito
       const addedProductButton = document.createElement('a');
