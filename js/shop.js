@@ -232,9 +232,10 @@ const popup = document.getElementById("popup");
 
 const container = document.getElementById("vinyls-container");
 
-let vinylIndex = 8;
+
 
 vinyls.forEach((vinyl) => {
+  let vinylIndex = 8;
   const colDiv = document.createElement('div');
   colDiv.classList.add('col');
 
@@ -347,6 +348,7 @@ if (search != null) {
 }
 
 searchInput.addEventListener('input', function () {
+  let vinylIndex = 8;
   // coge el término buscado
   const searchTerm = this.value.toLowerCase();
 
@@ -403,10 +405,14 @@ searchInput.addEventListener('input', function () {
       addCartButton.classList.add('btn-warning');
       addCartButton.innerText = 'Add to Cart';
       addCartButton.setAttribute("title", "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price);
+      addCartButton.setAttribute("tabindex", vinylIndex);
+      vinylIndex++;
 
       const span = document.createElement('span');
       span.classList.add("sr-only");
       span.innerText = "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price;
+
+      
 
 
 
