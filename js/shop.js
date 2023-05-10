@@ -208,6 +208,11 @@ const vinyls = [
 
 ];
 
+document.querySelector(".side-panel-toggle").addEventListener("click", () => {
+  document.querySelector(".wrapper").classList.toggle("side-panel-open");
+});
+
+
 var login = document.getElementById("login");
 if (sessionStorage.getItem("mail") != "" && sessionStorage.getItem("mail") != null) {
   login.innerText = sessionStorage.getItem("mail");
@@ -314,11 +319,12 @@ vinyls.forEach((vinyl) => {
     const itemsSplited = items.split("+");
 
     const nItems = itemsSplited.length;
-    const itemsContainer = document.getElementById("cart-items");
-    texto = document.createElement("h4");
+    /*const itemsContainer = document.getElementById("cart-items");
+    texto = document.createElement("p");
     texto.innerHTML = `You have ` + (nItems - 1) + " items in your cart";
     itemsContainer.innerHTML = "";
-    itemsContainer.appendChild(texto);
+    itemsContainer.appendChild(texto);*/
+    actualizarCarrito();
 
     popup.classList.remove("d-none");
     // Cooldown para no añadir varios al spamear
@@ -334,6 +340,9 @@ vinyls.forEach((vinyl) => {
   });
 
 });
+
+
+actualizarCarrito();
 
 // Buscar
 const searchInput = document.getElementById("searchInput");
@@ -452,6 +461,7 @@ searchInput.addEventListener('input', function () {
         texto.innerHTML = `You have ` + (nItems - 1) + " items in your cart";
         itemsContainer.innerHTML = "";
         itemsContainer.appendChild(texto);
+        actualizarCarrito();
 
         // Cooldown para no añadir varios al spamear
         setTimeout(function () {
@@ -468,6 +478,70 @@ searchInput.addEventListener('input', function () {
   }
 });
 
+function actualizarCarrito () {
+const cartContainer = document.getElementById("cartContainer");
+cartContainer.innerHTML = '';
+let priceTotal = 0;
+let itemss = sessionStorage.getItem('discos');
+const itemsSplited = itemss.split("+");
+
+
+for(let i = 0; i < itemsSplited.length; i++){
+
+    vinyls.forEach((vinyl)=>{ if (vinyl.id == itemsSplited[i]){
+        /*const card = `
+                 <div class="col">
+                    <div class="card bg-dark text-white">
+                      <img src="${vinyl.image}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">${vinyl.title}</h5>
+                        <p class="card-text">Price: ${vinyl.price}</p>
+                      </div>
+                    </div>
+                  </div>
+                `;
+                cartContainer.innerHTML += card;*/
+        const newColumn = document.createElement("div");
+        newColumn.classList.add("col");
+
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.classList.add("bg-dark");
+        card.classList.add("text-white");
+
+        const imagen = document.createElement("img");
+        imagen.src=vinyl.image;
+        imagen.classList.add("card-img-top");
+        imagen.alt=vinyl.title;
+
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
+
+        const cardTitle = document.createElement("h5");
+        cardTitle.innerText=vinyl.title;
+        cardTitle.classList.add("card-title");
+
+        const artist = document.createElement('h6');
+        artist.classList.add('card-text');
+        artist.innerText = vinyl.artist;
+
+        const cardPrice = document.createElement("p");
+        cardPrice.innerText="Price: "+ vinyl.price;
+        cardPrice.classList.add("card-text");
+
+        cartContainer.appendChild(newColumn);
+        newColumn.appendChild(card);
+        card.appendChild(imagen);
+        card.appendChild(cardBody);
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(artist);
+        cardBody.appendChild(cardPrice);
+    }
+    });
+
+}
+}
+
 
 const cartButton = document.getElementById("cart");
 cartButton.addEventListener("click", function () {
@@ -482,12 +556,11 @@ if (items == null) {
   items = "";
 }
 
-const itemsSplited = items.split("+");
-
+/*
 const nItems = itemsSplited.length;
 const itemsContainer = document.getElementById("cart-items");
 texto = document.createElement("h4");
 texto.innerHTML = `You have ` + (nItems - 1) + " items in your cart";
 itemsContainer.innerHTML = "";
 itemsContainer.appendChild(texto);
-
+*/
