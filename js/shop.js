@@ -419,7 +419,7 @@ searchInput.addEventListener('input', function () {
       span.classList.add("sr-only");
       span.innerText = "Album " + vinyl.title + " from the artist " + vinyl.artist + " that costs " + vinyl.price;
 
-      
+
 
 
 
@@ -476,68 +476,69 @@ searchInput.addEventListener('input', function () {
   }
 });
 actualizarCarrito();
-function actualizarCarrito () {
-const cartContainer = document.getElementById("cartContainer");
-cartContainer.innerHTML = '';
-let priceTotal = 0;
-let itemss = sessionStorage.getItem('discos');
-const itemsSplited = itemss.split("+");
+function actualizarCarrito() {
+  const cartContainer = document.getElementById("cartContainer");
+  cartContainer.innerHTML = '';
+  let priceTotal = 0;
+  let itemss = sessionStorage.getItem('discos');
+  if (itemss != null) {
+    const itemsSplited = itemss.split("+");
+    for (let i = 0; i < itemsSplited.length; i++) {
 
-
-for(let i = 0; i < itemsSplited.length; i++){
-
-    vinyls.forEach((vinyl)=>{ if (vinyl.id == itemsSplited[i]){
-        /*const card = `
-                 <div class="col">
-                    <div class="card bg-dark text-white">
-                      <img src="${vinyl.image}" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">${vinyl.title}</h5>
-                        <p class="card-text">Price: ${vinyl.price}</p>
+      vinyls.forEach((vinyl) => {
+        if (vinyl.id == itemsSplited[i]) {
+          /*const card = `
+                   <div class="col">
+                      <div class="card bg-dark text-white">
+                        <img src="${vinyl.image}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">${vinyl.title}</h5>
+                          <p class="card-text">Price: ${vinyl.price}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                `;
-                cartContainer.innerHTML += card;*/
-        const newColumn = document.createElement("div");
-        newColumn.classList.add("col");
+                  `;
+                  cartContainer.innerHTML += card;*/
+          const newColumn = document.createElement("div");
+          newColumn.classList.add("col");
 
-        const card = document.createElement("div");
-        card.classList.add("card");
-        card.classList.add("bg-dark");
-        card.classList.add("text-white");
+          const card = document.createElement("div");
+          card.classList.add("card");
+          card.classList.add("bg-dark");
+          card.classList.add("text-white");
 
-        const imagen = document.createElement("img");
-        imagen.src=vinyl.image;
-        imagen.classList.add("card-img-top");
-        imagen.alt=vinyl.title;
+          const imagen = document.createElement("img");
+          imagen.src = vinyl.image;
+          imagen.classList.add("card-img-top");
+          imagen.alt = vinyl.title;
 
-        const cardBody = document.createElement("div");
-        cardBody.classList.add("card-body");
+          const cardBody = document.createElement("div");
+          cardBody.classList.add("card-body");
 
-        const cardTitle = document.createElement("h5");
-        cardTitle.innerText=vinyl.title;
-        cardTitle.classList.add("card-title");
+          const cardTitle = document.createElement("h5");
+          cardTitle.innerText = vinyl.title;
+          cardTitle.classList.add("card-title");
 
-        const artist = document.createElement('h6');
-        artist.classList.add('card-text');
-        artist.innerText = vinyl.artist;
+          const artist = document.createElement('h6');
+          artist.classList.add('card-text');
+          artist.innerText = vinyl.artist;
 
-        const cardPrice = document.createElement("p");
-        cardPrice.innerText="Price: "+ vinyl.price;
-        cardPrice.classList.add("card-text");
+          const cardPrice = document.createElement("p");
+          cardPrice.innerText = "Price: " + vinyl.price;
+          cardPrice.classList.add("card-text");
 
-        cartContainer.appendChild(newColumn);
-        newColumn.appendChild(card);
-        card.appendChild(imagen);
-        card.appendChild(cardBody);
-        cardBody.appendChild(cardTitle);
-        cardBody.appendChild(artist);
-        cardBody.appendChild(cardPrice);
+          cartContainer.appendChild(newColumn);
+          newColumn.appendChild(card);
+          card.appendChild(imagen);
+          card.appendChild(cardBody);
+          cardBody.appendChild(cardTitle);
+          cardBody.appendChild(artist);
+          cardBody.appendChild(cardPrice);
+        }
+      }
+      );
     }
-    });
-
-}
+  }
 }
 
 
