@@ -94,13 +94,20 @@
   }
   
   .side-panel {
+	position: relative;
 	display: none;
 	width: 200px;
+	height: 100vh;
+    overflow: auto;
 	flex-shrink: 0;
 	padding: 20px;
 	color: #9b9d9e;
 	background: #28242c;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  }
+
+  .side-panel h4 {
+	color:#ffffff;
   }
   
   .side-panel-open .side-panel {
