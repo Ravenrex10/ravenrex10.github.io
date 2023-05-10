@@ -342,8 +342,6 @@ vinyls.forEach((vinyl) => {
 });
 
 
-actualizarCarrito();
-
 // Buscar
 const searchInput = document.getElementById("searchInput");
 if (search != null) {
@@ -456,7 +454,7 @@ searchInput.addEventListener('input', function () {
         const itemsSplited = items.split("+");
 
         const nItems = itemsSplited.length;
-        const itemsContainer = document.getElementById("cart-items");
+        const itemsContainer = document.getElementById("cartContainer");
         texto = document.createElement("h4");
         texto.innerHTML = `You have ` + (nItems - 1) + " items in your cart";
         itemsContainer.innerHTML = "";
@@ -477,7 +475,7 @@ searchInput.addEventListener('input', function () {
     });
   }
 });
-
+actualizarCarrito();
 function actualizarCarrito () {
 const cartContainer = document.getElementById("cartContainer");
 cartContainer.innerHTML = '';
