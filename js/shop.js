@@ -226,7 +226,7 @@ else {
 
 const URL = new URLSearchParams(window.location.search);
 const search = URL.get('search');
-console.log(search);
+//console.log(search);
 
 let cartItems = sessionStorage.getItem('discos');
 if (cartItems == null) {
@@ -363,7 +363,7 @@ searchInput.addEventListener('input', function () {
   const filteredVinyls = vinyls.filter(vinyl => (vinyl.title.toLowerCase().includes(searchTerm) || vinyl.artist.toLowerCase().includes(searchTerm)));
 
   const vinylsContainer = document.querySelector('#vinyls-container');
-  console.log(filteredVinyls);
+  //console.log(filteredVinyls);
   vinylsContainer.innerHTML = '';
   if (filteredVinyls.length == 0) {
     const h2 = document.createElement('h2');
